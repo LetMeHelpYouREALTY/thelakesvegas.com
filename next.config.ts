@@ -46,6 +46,7 @@ const csp = [
     "https://graph.instagram.com",
     "https://maps.googleapis.com",
     "https://maps.gstatic.com",
+    "https://places.googleapis.com",
   ].join(" "),
   [
     "frame-src 'self'",

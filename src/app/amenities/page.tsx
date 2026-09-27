@@ -30,8 +30,7 @@ import {
 export const metadata: Metadata = buildPageMetadata({
   path: "/amenities",
   title: `Nearby Amenities in The Lakes, Las Vegas | ${theLakesPrimaryKeyword} Guide`,
-  description:
-    "Interactive map and local guide to grocery, parks, golf, healthcare, and shopping near The Lakes Las Vegas. Dr. Jan Duffy, BHHS Nevada Properties. Call (702) 500-1942.",
+  description: `Interactive map and local guide to grocery, parks, golf, healthcare, and shopping near The Lakes Las Vegas. Dr. Jan Duffy, BHHS Nevada Properties. Call ${agentInfo.phone}.`,
   keywords: [
     "The Lakes Las Vegas amenities",
     "grocery near The Lakes Las Vegas",

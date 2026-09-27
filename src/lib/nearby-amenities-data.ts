@@ -4,6 +4,7 @@
  * HOA office reference: 2902 Lake East Dr, Las Vegas, NV 89117 (Prime / Lakes HOA).
  */
 
+import { agentInfo } from "@/lib/site-config";
 import { theLakesGeo, theLakesPrimaryKeyword } from "@/lib/the-lakes-aeo";
 
 export const communityMapCenter = {
@@ -32,10 +33,8 @@ export type AmenityCategoryId =
 export type AmenityCategory = {
   id: AmenityCategoryId;
   label: string;
-  /** Places API (New) primary types — first match used for searchNearby */
+  /** Places API (New) primary types — one searchNearby per category */
   primaryTypes: string[];
-  /** Legacy PlacesService types fallback */
-  legacyTypes: string[];
 };
 
 /** Master-planned west Las Vegas — parks, daily errands, healthcare, schools */
@@ -44,67 +43,56 @@ export const amenityCategories: AmenityCategory[] = [
     id: "parks",
     label: "Parks",
     primaryTypes: ["park"],
-    legacyTypes: ["park"],
   },
   {
     id: "restaurants",
     label: "Restaurants",
     primaryTypes: ["restaurant"],
-    legacyTypes: ["restaurant"],
   },
   {
     id: "grocery",
     label: "Grocery",
     primaryTypes: ["grocery_store", "supermarket"],
-    legacyTypes: ["grocery_or_supermarket", "supermarket"],
   },
   {
     id: "golf",
     label: "Golf",
     primaryTypes: ["golf_course"],
-    legacyTypes: ["golf_course"],
   },
   {
     id: "healthcare",
     label: "Healthcare",
     primaryTypes: ["hospital", "doctor"],
-    legacyTypes: ["hospital", "doctor"],
   },
   {
     id: "shopping",
     label: "Shopping",
     primaryTypes: ["shopping_mall", "department_store"],
-    legacyTypes: ["shopping_mall", "department_store"],
   },
   {
     id: "fitness",
     label: "Fitness",
     primaryTypes: ["gym"],
-    legacyTypes: ["gym"],
   },
   {
     id: "cafes",
     label: "Cafes",
     primaryTypes: ["cafe", "coffee_shop"],
-    legacyTypes: ["cafe"],
   },
   {
     id: "pharmacies",
     label: "Pharmacies",
     primaryTypes: ["pharmacy"],
-    legacyTypes: ["pharmacy"],
   },
   {
     id: "schools",
     label: "Schools",
     primaryTypes: ["school", "primary_school", "secondary_school"],
-    legacyTypes: ["school"],
   },
   {
     id: "parking",
     label: "Parking",
     primaryTypes: ["parking"],
-    legacyTypes: ["parking"],
   },
 ];
 
@@ -129,10 +117,12 @@ export type CuratedAmenity = {
     | "ExerciseGym"
     | "School"
     | "Place";
+  /** Official source used to verify name and address */
+  sourceUrl: string;
   note?: string;
 };
 
-/** Verified names + addresses only (sources: retailer locators, Prime HOA, public listings) */
+/** Names and street addresses verified against each sourceUrl (primary sources only). */
 export const curatedAmenities: CuratedAmenity[] = [
   {
     name: "Sprouts Farmers Market",
@@ -144,6 +134,7 @@ export const curatedAmenities: CuratedAmenity[] = [
     longitude: -115.2739,
     categoryId: "grocery",
     schemaType: "GroceryStore",
+    sourceUrl: "https://www.sprouts.com/store/nv/las-vegas/las-vegas-lake-mead/",
   },
   {
     name: "Albertsons",
@@ -155,9 +146,10 @@ export const curatedAmenities: CuratedAmenity[] = [
     longitude: -115.26,
     categoryId: "grocery",
     schemaType: "GroceryStore",
+    sourceUrl: "https://local.albertsons.com/nv/las-vegas/1650-n-buffalo-dr.html",
   },
   {
-    name: "Gateway to Summerlin Plaza",
+    name: "Summerlin Gateway Plaza",
     streetAddress: "7550 W Lake Mead Blvd",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
@@ -167,6 +159,7 @@ export const curatedAmenities: CuratedAmenity[] = [
     categoryId: "shopping",
     schemaType: "ShoppingCenter",
     note: "Retail center at Lake Mead Blvd and Buffalo Dr with grocery, services, and dining options.",
+    sourceUrl: "https://www.loopnet.com/Listing/7450-7590-W-Lake-Mead-Blvd-Las-Vegas-NV/14436420/",
   },
   {
     name: "Summerlin Hospital Medical Center",
@@ -178,7 +171,8 @@ export const curatedAmenities: CuratedAmenity[] = [
     longitude: -115.3334,
     categoryId: "healthcare",
     schemaType: "Hospital",
-    note: "Full-service hospital west of the Strip corridor, commonly used by west Las Vegas residents.",
+    note: "Full-service hospital serving west Las Vegas and Summerlin addresses.",
+    sourceUrl: "https://www.summerlinhospital.com/about/contact-us",
   },
   {
     name: "Centennial Hills Park",
@@ -186,22 +180,37 @@ export const curatedAmenities: CuratedAmenity[] = [
     addressLocality: "Las Vegas",
     addressRegion: "NV",
     postalCode: "89131",
-    latitude: 36.294,
-    longitude: -115.261,
+    latitude: 36.28694,
+    longitude: -115.26278,
     categoryId: "parks",
     schemaType: "Park",
+    sourceUrl: "https://www.lasvegasnevada.gov/Residents/Parks-Facilities/Centennial-hills-park",
   },
   {
-    name: "Badlands Golf Club",
-    streetAddress: "9119 Alta Dr",
+    name: "Angel Park Golf Club",
+    streetAddress: "100 S Rampart Blvd",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
     postalCode: "89145",
-    latitude: 36.157,
-    longitude: -115.334,
+    latitude: 36.1734,
+    longitude: -115.2895,
     categoryId: "golf",
     schemaType: "GolfCourse",
-    note: "Public golf west of The Lakes toward Summerlin.",
+    note: "Public golf facility west of The Lakes toward Summerlin.",
+    sourceUrl: "https://www.angelpark.com/",
+  },
+  {
+    name: "TPC Las Vegas",
+    streetAddress: "9851 Canyon Run Dr",
+    addressLocality: "Las Vegas",
+    addressRegion: "NV",
+    postalCode: "89144",
+    latitude: 36.1642,
+    longitude: -115.3378,
+    categoryId: "golf",
+    schemaType: "GolfCourse",
+    note: "PGA Tour-affiliated public course in the Summerlin area.",
+    sourceUrl: "https://tpc.com/lasvegas/",
   },
 ];
 
@@ -231,7 +240,7 @@ export const amenityGuideSections: AmenityGuideSection[] = [
     id: "golf",
     title: "Golf",
     paragraphs: [
-      "West Las Vegas and Summerlin offer multiple public and private golf courses. Badlands Golf Club on Alta Drive is one of the well-known public courses west of The Lakes. Summerlin and Red Rock country club communities add additional options within a reasonable drive.",
+      "West Las Vegas and Summerlin offer multiple public golf courses. Angel Park Golf Club on Rampart Boulevard and TPC Las Vegas on Canyon Run Drive are two well-known public options west of The Lakes. Summerlin and Red Rock country club communities add additional choices within a reasonable drive.",
     ],
   },
   {
@@ -246,7 +255,7 @@ export const amenityGuideSections: AmenityGuideSection[] = [
     id: "shopping-grocery",
     title: "Shopping & grocery",
     paragraphs: [
-      "Sprouts Farmers Market and Albertsons on Lake Mead Boulevard and Buffalo Drive are everyday grocery anchors for west-side residents. Gateway to Summerlin Plaza at 7550 W Lake Mead Blvd combines retail, services, and food in one center.",
+      "Sprouts Farmers Market and Albertsons on Lake Mead Boulevard and Buffalo Drive are everyday grocery anchors for west-side residents. Summerlin Gateway Plaza at 7550 W Lake Mead Blvd combines retail, services, and food in one center.",
       "Downtown Summerlin and larger Summerlin retail centers are typically about a 10–20 minute drive west, depending on traffic and your starting point in The Lakes.",
     ],
   },
@@ -255,7 +264,8 @@ export const amenityGuideSections: AmenityGuideSection[] = [
     title: "Schools",
     paragraphs: [
       "The Lakes sits within the Clark County School District. Assigned schools depend on your exact street address and CCSD boundaries — verify enrollment with the district and your listing agent before you buy.",
-      "Many families in west Las Vegas also consider private and charter options in Summerlin and the northwest valley.",
+      "Which CCSD schools are assigned to The Lakes addresses? Verify with the CCSD Zoning Search before you rely on a school name in a listing or marketing material.",
+      "Many households in west Las Vegas also consider private and charter options in Summerlin and the northwest valley.",
     ],
   },
   {
@@ -274,7 +284,7 @@ export const amenitiesFaqItems: AmenitiesFaqItem[] = [
   {
     question: "What grocery stores are near The Lakes Las Vegas?",
     answer:
-      "Sprouts Farmers Market at 7530 W Lake Mead Blvd and Albertsons at 1650 N Buffalo Dr are two full-service grocery options commonly used by west Las Vegas residents near The Lakes; Gateway to Summerlin Plaza at 7550 W Lake Mead Blvd adds additional retail and food choices.",
+      "Sprouts Farmers Market at 7530 W Lake Mead Blvd and Albertsons at 1650 N Buffalo Dr are two full-service grocery options commonly used by west Las Vegas residents near The Lakes; Summerlin Gateway Plaza at 7550 W Lake Mead Blvd adds additional retail and food choices.",
   },
   {
     question: "How far is The Lakes Las Vegas from the Las Vegas Strip?",
@@ -292,6 +302,11 @@ export const amenitiesFaqItems: AmenitiesFaqItem[] = [
       "The Lakes itself features lakes, greenbelts, and HOA-managed outdoor space; Centennial Hills Park at 7101 N Buffalo Dr is a Clark County park a short drive north for fields, playgrounds, and open recreation.",
   },
   {
+    question: "Which CCSD schools are assigned to The Lakes Las Vegas addresses?",
+    answer:
+      "School assignments depend on your exact street address within The Lakes. Verify current zoning with the Clark County School District Zoning Search and your REALTOR® before you buy — do not rely on neighborhood names alone.",
+  },
+  {
     question: "Is The Lakes Las Vegas close to Summerlin?",
     answer:
       "Yes — The Lakes borders Summerlin and Peccole Ranch to the west and north; Downtown Summerlin shopping and employment are typically about a 10–20 minute drive, making west-side errands convenient.",
@@ -304,7 +319,7 @@ export const amenitiesFaqItems: AmenitiesFaqItem[] = [
   {
     question: "Who can help me buy or sell in The Lakes Las Vegas?",
     answer:
-      "Dr. Jan Duffy with Berkshire Hathaway HomeServices Nevada Properties specializes in west Las Vegas communities including The Lakes — call (702) 500-1942 or email DrDuffy@TheLakesVegas.com for a curated tour of homes and nearby amenities.",
+      `Dr. Jan Duffy with Berkshire Hathaway HomeServices Nevada Properties specializes in west Las Vegas communities including The Lakes — call ${agentInfo.phone} or email ${agentInfo.email} for a curated tour of homes and nearby amenities.`,
   },
 ];
 

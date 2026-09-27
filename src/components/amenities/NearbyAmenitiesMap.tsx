@@ -8,6 +8,8 @@ import {
   placeDirectionsUrl,
   type AmenityCategoryId,
 } from "@/lib/nearby-amenities-data";
+import { loadGoogleMaps, mapsAuthFailed } from "@/lib/load-google-maps";
+import { searchCategory } from "@/lib/nearby-amenities-search";
 import NearbyAmenitiesMapFallback from "@/components/amenities/NearbyAmenitiesMapFallback";
 
 const MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY?.trim();
@@ -19,57 +21,71 @@ type NearbyAmenitiesMapProps = {
   compact?: boolean;
 };
 
-let mapsScriptPromise: Promise<void> | null = null;
-
-function loadGoogleMapsScript(): Promise<void> {
-  if (typeof window === "undefined") return Promise.reject(new Error("no window"));
-  if (window.google?.maps?.Map) return Promise.resolve();
-  if (mapsScriptPromise) return mapsScriptPromise;
-
-  mapsScriptPromise = new Promise((resolve, reject) => {
-    const existing = document.querySelector('script[data-nearby-amenities-maps="1"]');
-    if (existing) {
-      existing.addEventListener("load", () => resolve());
-      existing.addEventListener("error", () => reject(new Error("maps script error")));
-      return;
-    }
-    const script = document.createElement("script");
-    script.dataset.nearbyAmenitiesMaps = "1";
-    script.async = true;
-    script.defer = true;
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${MAPS_API_KEY}&libraries=places&v=weekly`;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error("maps script error"));
-    document.head.appendChild(script);
-  });
-
-  return mapsScriptPromise;
-}
-
-function escapeHtml(text: string): string {
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
-function buildInfoWindowContent(opts: {
+function buildInfoWindowElement(opts: {
   name: string;
   address?: string;
-  rating?: number;
   lat: number;
   lng: number;
-}): string {
-  const ratingLine =
-    opts.rating != null && !Number.isNaN(opts.rating)
-      ? `<p class="text-sm text-slate-600">Rating: ${opts.rating.toFixed(1)} / 5</p>`
-      : "";
-  const addressLine = opts.address
-    ? `<p class="text-sm text-slate-700">${escapeHtml(opts.address)}</p>`
-    : "";
-  const dirUrl = placeDirectionsUrl(opts.name, opts.address ?? `${opts.lat},${opts.lng}`);
-  return `<div class="p-1 max-w-xs"><strong>${escapeHtml(opts.name)}</strong>${ratingLine}${addressLine}<p class="mt-2"><a href="${dirUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-semibold">Directions</a></p></div>`;
+}): HTMLElement {
+  const wrap = document.createElement("div");
+  wrap.className = "p-1 max-w-xs";
+
+  const title = document.createElement("strong");
+  title.textContent = opts.name;
+  wrap.appendChild(title);
+
+  if (opts.address) {
+    const addr = document.createElement("p");
+    addr.className = "text-sm text-slate-700";
+    addr.textContent = opts.address;
+    wrap.appendChild(addr);
+  }
+
+  const dirP = document.createElement("p");
+  dirP.className = "mt-2";
+  const link = document.createElement("a");
+  link.href = placeDirectionsUrl(opts.name, opts.address ?? `${opts.lat},${opts.lng}`);
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.className = "text-blue-600 font-semibold";
+  link.textContent = "Directions";
+  dirP.appendChild(link);
+  wrap.appendChild(dirP);
+
+  return wrap;
+}
+
+function CuratedPlacesList({ categoryId }: { categoryId: AmenityCategoryId }) {
+  const list = curatedAmenitiesForCategory(categoryId);
+  const label = amenityCategories.find((c) => c.id === categoryId)?.label ?? "Places";
+  if (list.length === 0) return null;
+
+  return (
+    <div className="mt-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+      <h3 className="text-sm font-bold text-slate-900 mb-3">
+        Curated {label.toLowerCase()} near The Lakes
+      </h3>
+      <ul className="space-y-3">
+        {list.map((place) => {
+          const fullAddress = `${place.streetAddress}, ${place.addressLocality}, ${place.addressRegion} ${place.postalCode}`;
+          return (
+            <li key={place.name} className="border-b border-slate-100 pb-2 last:border-0">
+              <p className="font-medium text-slate-900 text-sm">{place.name}</p>
+              <p className="text-xs text-slate-600">{fullAddress}</p>
+              <a
+                href={placeDirectionsUrl(place.name, fullAddress)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-1 text-xs font-semibold text-blue-600 hover:text-blue-800"
+              >
+                Directions
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
 
 export default function NearbyAmenitiesMap({ className = "", compact = false }: NearbyAmenitiesMapProps) {
@@ -82,9 +98,17 @@ export default function NearbyAmenitiesMap({ className = "", compact = false }: 
   const communityMarkerRef = useRef<google.maps.Marker | null>(null);
 
   const [activeCategory, setActiveCategory] = useState<AmenityCategoryId>(amenityCategories[0].id);
-  const [useFallback, setUseFallback] = useState(!MAPS_API_KEY);
+  const [useFallback, setUseFallback] = useState(!MAPS_API_KEY || mapsAuthFailed);
   const [shouldLoadMap, setShouldLoadMap] = useState(false);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  const [showCuratedList, setShowCuratedList] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const onAuthFailure = () => setUseFallback(true);
+    window.addEventListener("gmaps:auth-failure", onAuthFailure);
+    return () => window.removeEventListener("gmaps:auth-failure", onAuthFailure);
+  }, []);
 
   useEffect(() => {
     if (useFallback || !containerRef.current) return;
@@ -121,7 +145,7 @@ export default function NearbyAmenitiesMap({ className = "", compact = false }: 
     });
     marker.addListener("click", () => {
       infoWindowRef.current?.setContent(
-        buildInfoWindowContent({
+        buildInfoWindowElement({
           name: communityMapCenter.nameWithCity,
           address: communityMapCenter.hoaOfficeAddress,
           lat: communityMapCenter.latitude,
@@ -147,18 +171,13 @@ export default function NearbyAmenitiesMap({ className = "", compact = false }: 
       clearMarkers();
       addCommunityMarker(map);
       setStatusMessage("Loading nearby places…");
+      setShowCuratedList(false);
 
       const center = { lat: communityMapCenter.latitude, lng: communityMapCenter.longitude };
       const bounds = new google.maps.LatLngBounds();
       bounds.extend(center);
 
-      const addPlaceMarker = (opts: {
-        name: string;
-        lat: number;
-        lng: number;
-        address?: string;
-        rating?: number;
-      }) => {
+      const addPlaceMarker = (opts: { name: string; lat: number; lng: number; address?: string }) => {
         const marker = new google.maps.Marker({
           map,
           position: { lat: opts.lat, lng: opts.lng },
@@ -166,10 +185,9 @@ export default function NearbyAmenitiesMap({ className = "", compact = false }: 
         });
         marker.addListener("click", () => {
           infoWindowRef.current?.setContent(
-            buildInfoWindowContent({
+            buildInfoWindowElement({
               name: opts.name,
               address: opts.address,
-              rating: opts.rating,
               lat: opts.lat,
               lng: opts.lng,
             })
@@ -180,7 +198,6 @@ export default function NearbyAmenitiesMap({ className = "", compact = false }: 
         bounds.extend({ lat: opts.lat, lng: opts.lng });
       };
 
-      // Curated markers (always shown for this category)
       for (const place of curatedAmenitiesForCategory(categoryId)) {
         const geocodeQuery = `${place.streetAddress}, ${place.addressLocality}, ${place.addressRegion} ${place.postalCode}`;
         addPlaceMarker({
@@ -192,90 +209,37 @@ export default function NearbyAmenitiesMap({ className = "", compact = false }: 
       }
 
       let dynamicCount = 0;
+      let searchFailed = false;
 
       try {
-        const placesLib = (await google.maps.importLibrary("places")) as {
-          Place?: {
-            searchNearby: (req: Record<string, unknown>) => Promise<{ places?: unknown[] }>;
-          };
-          SearchNearbyRankPreference?: { POPULARITY: string };
-        };
+        const places = await searchCategory(
+          center,
+          categoryId,
+          category.primaryTypes,
+          communityMapCenter.searchRadiusMeters
+        );
 
-        if (placesLib.Place?.searchNearby) {
-          const { places } = await placesLib.Place.searchNearby({
-            fields: ["displayName", "location", "formattedAddress", "rating", "googleMapsURI"],
-            locationRestriction: {
-              center,
-              radius: communityMapCenter.searchRadiusMeters,
-            },
-            includedPrimaryTypes: category.primaryTypes.slice(0, 1),
-            maxResultCount: 12,
-            rankPreference: placesLib.SearchNearbyRankPreference?.POPULARITY ?? "POPULARITY",
+        for (const place of places) {
+          const rawName = place.displayName;
+          const name =
+            typeof rawName === "string"
+              ? rawName
+              : rawName && typeof rawName === "object" && "text" in rawName
+                ? String((rawName as { text?: string }).text ?? "Place")
+                : "Place";
+          const loc = place.location;
+          if (!loc) continue;
+          const { lat, lng } = loc.toJSON();
+          addPlaceMarker({
+            name,
+            lat,
+            lng,
+            address: place.formattedAddress ?? undefined,
           });
-
-          for (const raw of places ?? []) {
-            const p = raw as {
-              displayName?: string | { text?: string };
-              location?: { lat: () => number; lng: () => number } | { lat: number; lng: number };
-              formattedAddress?: string;
-              rating?: number;
-            };
-            const name =
-              typeof p.displayName === "string"
-                ? p.displayName
-                : p.displayName?.text ?? "Place";
-            let lat: number | undefined;
-            let lng: number | undefined;
-            if (p.location && typeof (p.location as { lat: () => number }).lat === "function") {
-              lat = (p.location as { lat: () => number; lng: () => number }).lat();
-              lng = (p.location as { lat: () => number; lng: () => number }).lng();
-            } else if (p.location) {
-              lat = (p.location as { lat: number; lng: number }).lat;
-              lng = (p.location as { lat: number; lng: number }).lng;
-            }
-            if (lat == null || lng == null) continue;
-            addPlaceMarker({
-              name,
-              lat,
-              lng,
-              address: p.formattedAddress,
-              rating: p.rating,
-            });
-            dynamicCount += 1;
-          }
-        } else {
-          throw new Error("Place.searchNearby unavailable");
+          dynamicCount += 1;
         }
       } catch {
-        await new Promise<void>((resolve) => {
-          const service = new google.maps.places.PlacesService(map);
-          service.nearbySearch(
-            {
-              location: new google.maps.LatLng(center.lat, center.lng),
-              radius: communityMapCenter.searchRadiusMeters,
-              type: category.legacyTypes[0],
-            },
-            (results, status) => {
-              if (status === "OK" && results) {
-                for (const r of results.slice(0, 12)) {
-                  const loc = r.geometry?.location;
-                  if (!loc) continue;
-                  const lat = loc.lat();
-                  const lng = loc.lng();
-                  addPlaceMarker({
-                    name: r.name ?? "Place",
-                    lat,
-                    lng,
-                    address: r.vicinity ?? r.formatted_address,
-                    rating: r.rating,
-                  });
-                  dynamicCount += 1;
-                }
-              }
-              resolve();
-            }
-          );
-        });
+        searchFailed = true;
       }
 
       if (markersRef.current.length > 1) {
@@ -284,22 +248,40 @@ export default function NearbyAmenitiesMap({ className = "", compact = false }: 
         map.setCenter(center);
       }
 
-      setStatusMessage(
-        dynamicCount > 0
-          ? `Showing ${dynamicCount} nearby ${category.label.toLowerCase()} (plus The Lakes).`
-          : `Showing curated ${category.label.toLowerCase()} near The Lakes.`
-      );
+      const curatedCount = curatedAmenitiesForCategory(categoryId).length;
+      if (searchFailed) {
+        setShowCuratedList(curatedCount > 0);
+        setStatusMessage(
+          `Live search unavailable — showing curated ${category.label.toLowerCase()} near The Lakes.`
+        );
+      } else {
+        setShowCuratedList(dynamicCount === 0 && curatedCount > 0);
+        setStatusMessage(
+          dynamicCount > 0
+            ? `Showing ${dynamicCount} nearby ${category.label.toLowerCase()} (plus The Lakes).`
+            : `Showing curated ${category.label.toLowerCase()} near The Lakes.`
+        );
+      }
     },
     [addCommunityMarker, clearMarkers]
   );
 
   useEffect(() => {
     if (!shouldLoadMap || useFallback || !mapHostRef.current) return;
+    if (mapsAuthFailed) {
+      setUseFallback(true);
+      return;
+    }
     let cancelled = false;
 
-    (async () => {
-      try {
-        await loadGoogleMapsScript();
+    const key = MAPS_API_KEY;
+    if (!key) {
+      setUseFallback(true);
+      return;
+    }
+
+    loadGoogleMaps(key)
+      .then(async () => {
         if (cancelled || !mapHostRef.current) return;
 
         const map = new google.maps.Map(mapHostRef.current, {
@@ -313,10 +295,10 @@ export default function NearbyAmenitiesMap({ className = "", compact = false }: 
         mapRef.current = map;
         infoWindowRef.current = new google.maps.InfoWindow();
         await searchNearby(map, activeCategory);
-      } catch {
+      })
+      .catch(() => {
         if (!cancelled) setUseFallback(true);
-      }
-    })();
+      });
 
     return () => {
       cancelled = true;
@@ -396,6 +378,7 @@ export default function NearbyAmenitiesMap({ className = "", compact = false }: 
           {statusMessage}
         </p>
       ) : null}
+      {showCuratedList ? <CuratedPlacesList categoryId={activeCategory} /> : null}
     </div>
   );
 }

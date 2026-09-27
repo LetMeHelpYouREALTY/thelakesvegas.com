@@ -26,10 +26,8 @@ export default function NearbyAmenitiesMapFallback({
   return (
     <div className={className}>
       <p className="mb-4 text-sm text-slate-600 rounded-lg bg-amber-50 border border-amber-100 px-4 py-3">
-        Interactive amenity search uses Google Maps when{" "}
-        <code className="text-xs">NEXT_PUBLIC_GOOGLE_MAPS_API_KEY</code> is configured. Below is a
-        map centered on {communityMapCenter.nameWithCity} plus verified nearby places for the
-        selected category.
+        Map preview centered on {communityMapCenter.nameWithCity}, with verified nearby places for
+        the selected category listed beside it.
       </p>
       <div
         role="tablist"
@@ -78,8 +76,8 @@ export default function NearbyAmenitiesMapFallback({
           </h3>
           {list.length === 0 ? (
             <p className="text-slate-600 text-sm">
-              No curated listings in this category yet — use the interactive map after adding your
-              Google Maps API key, or contact Dr. Jan Duffy for local recommendations.
+              No curated listings in this category yet — contact Dr. Jan Duffy for local
+              recommendations, or try another category above.
             </p>
           ) : (
             <ul className="space-y-4">
