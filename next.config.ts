@@ -15,6 +15,8 @@ const csp = [
     "https://www.google-analytics.com",
     "https://challenges.cloudflare.com",
     "https://www.instagram.com",
+    "https://maps.googleapis.com",
+    "https://maps.gstatic.com",
   ].join(" "),
   [
     "style-src 'self' 'unsafe-inline'",
@@ -42,6 +44,8 @@ const csp = [
     "https://api.followupboss.com",
     "https://www.instagram.com",
     "https://graph.instagram.com",
+    "https://maps.googleapis.com",
+    "https://maps.gstatic.com",
   ].join(" "),
   [
     "frame-src 'self'",

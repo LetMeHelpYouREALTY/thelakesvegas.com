@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/page-metadata";
+import NearbyAmenitiesSection from "@/components/amenities/NearbyAmenitiesSection";
 import SchemaScript from "@/components/SchemaScript";
 import { combineSchemas, generateBreadcrumbSchema } from "@/lib/schema";
 
@@ -475,6 +476,8 @@ export default function ListingsPage() {
           </section>
 
           {/* CTA */}
+          <NearbyAmenitiesSection id="listings-nearby-amenities" />
+
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Find Your Las Vegas Home?
