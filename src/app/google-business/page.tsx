@@ -20,7 +20,7 @@ import {
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import SchemaScript from "@/components/SchemaScript";
-import { combineSchemas } from "@/lib/schema";
+import { combineSchemas, generateBreadcrumbSchema } from "@/lib/schema";
 import {
   businessInfo,
   gbpDescription,
@@ -53,7 +53,14 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default function GoogleBusinessPage() {
-  const pageSchemas = combineSchemas(generateLocalBusinessSchema(), generateFAQSchema());
+  const pageSchemas = combineSchemas(
+    generateBreadcrumbSchema([
+      { name: "Home", url: "/" },
+      { name: "Business Profile", url: "/google-business" },
+    ]),
+    generateLocalBusinessSchema(),
+    generateFAQSchema(),
+  );
 
   return (
     <>

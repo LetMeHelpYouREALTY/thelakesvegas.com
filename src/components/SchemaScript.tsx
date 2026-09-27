@@ -7,7 +7,7 @@
  * <SchemaScript schemas={[schema1, schema2]} />
  */
 
-import { combineSchemas, schemaToJsonLd } from "@/lib/schema";
+import { combineSchemas, schemaToJsonLd, splitSchemaForJsonLd } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
 interface SchemaScriptProps {
@@ -38,12 +38,19 @@ export default function SchemaScript({ schema, schemas, id }: SchemaScriptProps)
     return null;
   }
 
+  const blocks = splitSchemaForJsonLd(finalSchema);
+
   return (
-    <script
-      id={id}
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: schemaToJsonLd(finalSchema) }}
-    />
+    <>
+      {blocks.map((block, index) => (
+        <script
+          key={id ? `${id}-${index}` : `schema-${index}`}
+          id={index === 0 ? id : id ? `${id}-${index}` : undefined}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schemaToJsonLd(block) }}
+        />
+      ))}
+    </>
   );
 }
 
