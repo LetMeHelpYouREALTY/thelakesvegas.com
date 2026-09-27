@@ -634,6 +634,43 @@ export function combineSchemas(...schemas: Record<string, unknown>[]) {
 }
 
 /**
+ * Split combined @graph payloads so BreadcrumbList is emitted as its own JSON-LD
+ * block (root @type), which site audits and some validators expect on inner pages.
+ */
+export function splitSchemaForJsonLd(
+  schema: Record<string, unknown>,
+): Record<string, unknown>[] {
+  const graph = schema["@graph"];
+  if (!Array.isArray(graph)) {
+    return [schema];
+  }
+
+  const nodes = graph as Record<string, unknown>[];
+  const breadcrumbNodes = nodes.filter((node) => node["@type"] === "BreadcrumbList");
+  const restNodes = nodes.filter((node) => node["@type"] !== "BreadcrumbList");
+
+  const blocks: Record<string, unknown>[] = breadcrumbNodes.map((node) => ({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: node.itemListElement,
+  }));
+
+  if (restNodes.length === 1) {
+    blocks.push({
+      "@context": "https://schema.org",
+      ...restNodes[0],
+    });
+  } else if (restNodes.length > 1) {
+    blocks.push({
+      "@context": "https://schema.org",
+      "@graph": restNodes,
+    });
+  }
+
+  return blocks.length > 0 ? blocks : [schema];
+}
+
+/**
  * Convert schema object to JSON-LD string
  */
 export function schemaToJsonLd(schema: Record<string, unknown>): string {

@@ -121,7 +121,7 @@ function buildOpenHouseEventJsonLd(): Record<string, unknown> | null {
 
 export const metadata: Metadata = buildPageMetadata({
   path: "/",
-  title: "The Lakes Las Vegas Homes for Sale & Real Estate | Dr. Jan Duffy, REALTOR®",
+  title: "The Lakes Las Vegas Homes for Sale | Dr. Jan Duffy",
   description: siteConfig.description,
   keywords: [
     "The Lakes Las Vegas",
@@ -135,7 +135,7 @@ export const metadata: Metadata = buildPageMetadata({
     "BHHS Nevada Properties",
   ],
   openGraphOverrides: {
-    title: "The Lakes Las Vegas Homes for Sale & Real Estate | Dr. Jan Duffy",
+    title: "The Lakes Las Vegas Homes for Sale | Dr. Jan Duffy",
     description: siteConfig.description,
   },
 });
