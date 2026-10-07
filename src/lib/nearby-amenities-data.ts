@@ -149,6 +149,32 @@ export const curatedAmenities: CuratedAmenity[] = [
     sourceUrl: "https://local.albertsons.com/nv/las-vegas/1650-n-buffalo-dr.html",
   },
   {
+    name: "Smith's Food and Drug",
+    streetAddress: "9851 W Charleston Blvd",
+    addressLocality: "Las Vegas",
+    addressRegion: "NV",
+    postalCode: "89117",
+    latitude: 36.15881,
+    longitude: -115.31026,
+    categoryId: "grocery",
+    schemaType: "GroceryStore",
+    sourceUrl:
+      "https://www.smithsfoodanddrug.com/stores/grocery/nv/las-vegas/hualapai-commons/706/00347",
+  },
+  {
+    name: "Walgreens Pharmacy",
+    streetAddress: "7599 W Lake Mead Blvd",
+    addressLocality: "Las Vegas",
+    addressRegion: "NV",
+    postalCode: "89128",
+    latitude: 36.1972,
+    longitude: -115.2742,
+    categoryId: "pharmacies",
+    schemaType: "Pharmacy",
+    sourceUrl:
+      "https://www.walgreens.com/locator/walgreens-7599%2Bw%2Blake%2Bmead%2Bblvd-las-vegas-nv-89128/id%3D3922",
+  },
+  {
     name: "Summerlin Gateway Plaza",
     streetAddress: "7550 W Lake Mead Blvd",
     addressLocality: "Las Vegas",
@@ -255,7 +281,7 @@ export const amenityGuideSections: AmenityGuideSection[] = [
     id: "shopping-grocery",
     title: "Shopping & grocery",
     paragraphs: [
-      "Sprouts Farmers Market and Albertsons on Lake Mead Boulevard and Buffalo Drive are everyday grocery anchors for west-side residents. Summerlin Gateway Plaza at 7550 W Lake Mead Blvd combines retail, services, and food in one center.",
+      "Sprouts Farmers Market and Albertsons on Lake Mead Boulevard and Buffalo Drive are everyday grocery anchors for west-side residents. Smith's Food and Drug at 9851 W Charleston Blvd serves many The Lakes and 89117 addresses. Summerlin Gateway Plaza at 7550 W Lake Mead Blvd combines retail, services, and food in one center.",
       "Downtown Summerlin and larger Summerlin retail centers are typically about a 10–20 minute drive west, depending on traffic and your starting point in The Lakes.",
     ],
   },
@@ -284,7 +310,7 @@ export const amenitiesFaqItems: AmenitiesFaqItem[] = [
   {
     question: "What grocery stores are near The Lakes Las Vegas?",
     answer:
-      "Sprouts Farmers Market at 7530 W Lake Mead Blvd and Albertsons at 1650 N Buffalo Dr are two full-service grocery options commonly used by west Las Vegas residents near The Lakes; Summerlin Gateway Plaza at 7550 W Lake Mead Blvd adds additional retail and food choices.",
+      "Sprouts Farmers Market at 7530 W Lake Mead Blvd, Albertsons at 1650 N Buffalo Dr, and Smith's Food and Drug at 9851 W Charleston Blvd are full-service grocery options commonly used near The Lakes; Summerlin Gateway Plaza at 7550 W Lake Mead Blvd adds additional retail and food choices.",
   },
   {
     question: "How far is The Lakes Las Vegas from the Las Vegas Strip?",
