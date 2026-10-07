@@ -7,6 +7,7 @@
  */
 
 import { theLakesGeo } from "./the-lakes-aeo";
+import type { CuratedAmenity } from "./nearby-amenities-data";
 import {
   siteConfig,
   agentInfo,
@@ -609,6 +610,57 @@ export function generateWebPageSchema(page: {
     },
     ...(page.datePublished && { datePublished: page.datePublished }),
     ...(page.dateModified && { dateModified: page.dateModified }),
+  };
+}
+
+// ============================================================================
+// Nearby amenities (The Lakes)
+// ============================================================================
+
+/** Community Place with geo for amenities / hyperlocal pages */
+export function generateTheLakesCommunityPlaceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    "@id": `${BASE_URL}/amenities#the-lakes-community`,
+    name: theLakesGeo.nameWithCity,
+    description: theLakesGeo.summary,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: theLakesGeo.latitude,
+      longitude: theLakesGeo.longitude,
+    },
+    containedInPlace: {
+      "@type": "City",
+      name: "Las Vegas",
+      addressRegion: "NV",
+      addressCountry: "US",
+    },
+  };
+}
+
+/** ItemList of verified curated amenities (Place subtypes) */
+export function generateNearbyAmenitiesItemListSchema(places: CuratedAmenity[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Featured amenities near The Lakes Las Vegas",
+    itemListElement: places.map((place, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": place.schemaType,
+        name: place.name,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: place.streetAddress,
+          addressLocality: place.addressLocality,
+          addressRegion: place.addressRegion,
+          postalCode: place.postalCode,
+          addressCountry: "US",
+        },
+      },
+    })),
   };
 }
 

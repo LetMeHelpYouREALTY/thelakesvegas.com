@@ -5,6 +5,7 @@ import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import InstagramProfileEmbed from "@/components/social/InstagramProfileEmbed";
+import NearbyAmenitiesSection from "@/components/amenities/NearbyAmenitiesSection";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -345,6 +346,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <NearbyAmenitiesSection id="whats-nearby" variant="home" className="bg-slate-50" />
 
         {/* Berkshire Hathaway Value Proposition Section */}
         <section className="py-16 md:py-20 bg-white">
