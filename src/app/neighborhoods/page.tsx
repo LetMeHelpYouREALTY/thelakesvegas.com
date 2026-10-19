@@ -8,6 +8,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 import SchemaScript from "@/components/SchemaScript";
 import FAQSection from "@/components/sections/FAQSection";
 import LocalServiceAreaBlurb from "@/components/seo/LocalServiceAreaBlurb";
+import NearbyAmenitiesSection from "@/components/amenities/NearbyAmenitiesSection";
 import {
   combineSchemas,
   generateBreadcrumbSchema,
@@ -265,6 +266,8 @@ export default function NeighborhoodsPage() {
               </div>
             </div>
           </section>
+
+          <NearbyAmenitiesSection id="neighborhoods-nearby-amenities" className="bg-slate-50" />
 
           <FAQSection
             className="!py-12 bg-slate-50"
