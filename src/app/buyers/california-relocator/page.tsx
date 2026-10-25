@@ -53,7 +53,7 @@ const faqSchema = {
       name: "What neighborhoods do California relocators prefer in Las Vegas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "California buyers typically gravitate toward Summerlin (similar to Irvine/coastal communities), Henderson (family-friendly like San Diego suburbs), and The Ridges (comparable to Newport Coast luxury). These areas offer the quality and amenities California buyers expect.",
+        text: "California buyers typically gravitate toward Summerlin (similar to Irvine/coastal communities), Henderson (master-planned like San Diego suburbs), and The Ridges (comparable to Newport Coast luxury). These areas offer the quality and amenities California buyers expect.",
       },
     },
     {
@@ -282,7 +282,7 @@ export default function CaliforniaRelocatorPage() {
                     top schools, and "America's Safest City" accolades.
                   </p>
                   <div className="text-sm text-slate-500 mb-4">
-                    <strong>Best for:</strong> Tech workers, young families, San Diego relocators
+                    <strong>Best for:</strong> Tech workers, move-up buyers, San Diego relocators
                   </div>
                   <ul className="text-sm space-y-1 text-slate-700">
                     <li className="flex items-center">
@@ -410,7 +410,7 @@ export default function CaliforniaRelocatorPage() {
                 </h3>
                 <p className="text-slate-600">
                   California buyers typically gravitate toward Summerlin (similar to Irvine/coastal
-                  communities), Henderson (family-friendly like San Diego suburbs), and The Ridges
+                  communities), Henderson (master-planned like San Diego suburbs), and The Ridges
                   (comparable to Newport Coast luxury). These areas offer the quality and amenities
                   California buyers expect.
                 </p>

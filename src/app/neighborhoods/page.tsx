@@ -42,7 +42,7 @@ const neighborhoods = [
     slug: "henderson",
     medianPrice: "$485,000",
     priceChange: "+5.1%",
-    description: "Nevada's second-largest city known for safety, schools, and family-friendly living",
+    description: "Nevada's second-largest city known for parks, trails, and master-planned living",
     highlights: ["Low Crime Rate", "Excellent Schools", "Lake Las Vegas", "Green Valley"],
     bestFor: "Families, retirees, commuters",
   },
@@ -53,7 +53,7 @@ const neighborhoods = [
     priceChange: "+4.8%",
     description: "Established Henderson community with mature landscaping and excellent amenities",
     highlights: ["Golf Courses", "Walking Trails", "The District", "Mature Trees"],
-    bestFor: "Established families, golfers, professionals",
+    bestFor: "Move-up buyers, golfers, professionals",
   },
   {
     name: "The Ridges",
@@ -78,9 +78,9 @@ const neighborhoods = [
     slug: "north-las-vegas",
     medianPrice: "$385,000",
     priceChange: "+3.2%",
-    description: "Rapidly growing area with affordable new construction and family-friendly communities",
-    highlights: ["New Construction", "Affordable", "Growing Area", "Family-Friendly"],
-    bestFor: "First-time buyers, young families, investors",
+    description: "Rapidly growing area with affordable new construction and master-planned communities",
+    highlights: ["New Construction", "Affordable", "Growing Area", "Community Amenities"],
+    bestFor: "First-time buyers, move-up buyers, investors",
   },
   {
     name: "Skye Canyon",
@@ -89,15 +89,15 @@ const neighborhoods = [
     priceChange: "+5.5%",
     description: "Newer master-planned community in northwest Las Vegas with mountain views",
     highlights: ["New Homes", "Mountain Views", "Skye Center", "Great Schools"],
-    bestFor: "Young families, outdoor enthusiasts, commuters",
+    bestFor: "Move-up buyers, outdoor enthusiasts, commuters",
   },
   {
     name: "Centennial Hills",
     slug: "centennial-hills",
     medianPrice: "$495,000",
     priceChange: "+4.8%",
-    description: "Northwest Las Vegas community with mountain proximity and family amenities",
-    highlights: ["Mountain Access", "Parks", "Shopping", "Family-Friendly"],
+    description: "Northwest Las Vegas community with mountain proximity and community amenities",
+    highlights: ["Mountain Access", "Parks", "Shopping", "Community Amenities"],
     bestFor: "Families, outdoor lovers, professionals",
   },
   {
@@ -227,7 +227,7 @@ export default function NeighborhoodsPage() {
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Every Las Vegas neighborhood has its own personality. Whether you want the
-                family-friendly parks of Summerlin, the established charm of Green Valley, or the
+                large parks of Summerlin, the established charm of Green Valley, or the
                 luxury of The Ridges, I'll help you find the community that matches your lifestyle.
                 That's the Berkshire Hathaway HomeServices difference—personalized guidance backed
                 by local expertise."

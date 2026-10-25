@@ -157,7 +157,7 @@ export default function NorthLasVegasPage() {
                   </div>
                   <p className="text-slate-600">
                     North Las Vegas offers the lowest median home prices in the Las Vegas Valley, making
-                    homeownership attainable for first-time buyers, young families, and investors. Entry-level
+                    homeownership attainable for first-time buyers, move-up buyers, and investors. Entry-level
                     homes start in the $320,000s, while new construction from quality builders ranges
                     from $380,000 to $550,000—prices that would buy a condo elsewhere.
                   </p>
@@ -270,7 +270,7 @@ export default function NorthLasVegasPage() {
                   <ul className="text-slate-600 text-sm space-y-2">
                     <li><strong>Aliante:</strong> Master-planned with golf, casino, town center. Homes $400K-$550K.</li>
                     <li><strong>Tule Springs:</strong> Newer community near I-215. KB Home, Lennar. $380K-$500K.</li>
-                    <li><strong>Valley Vista:</strong> Family-focused with parks, pools. Century Communities. $350K-$450K.</li>
+                    <li><strong>Valley Vista:</strong> Parks and pools. Century Communities. $350K-$450K.</li>
                     <li><strong>Camino Al Norte:</strong> Growing area near 215. Multiple builders. $380K-$480K.</li>
                   </ul>
                 </div>

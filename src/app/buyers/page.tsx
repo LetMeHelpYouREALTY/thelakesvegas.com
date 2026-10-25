@@ -128,7 +128,7 @@ const buyingSteps = [
 
 const neighborhoods = [
   { name: "Summerlin", price: "$625K", description: "Master-planned community with Red Rock views" },
-  { name: "Henderson", price: "$485K", description: "Family-friendly with low crime rates" },
+  { name: "Henderson", price: "$485K", description: "Master-planned, with parks and trails" },
   { name: "Green Valley", price: "$520K", description: "Established with mature landscaping" },
   { name: "The Ridges", price: "$2.5M", description: "Ultra-luxury guard-gated estates" },
   { name: "North Las Vegas", price: "$385K", description: "Affordable new construction" },

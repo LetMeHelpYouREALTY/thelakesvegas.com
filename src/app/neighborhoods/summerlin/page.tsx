@@ -151,7 +151,7 @@ export default function SummerlinPage() {
               </p>
               <p>
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> has deep roots in Summerlin,
-                and our agents understand the nuances of each village—from the family-friendly atmosphere of
+                and our agents understand the nuances of each village—from the community atmosphere of
                 The Paseos to the luxury estates of The Ridges. Whether you're a first-time buyer looking at
                 condos in Affinity or a move-up buyer seeking a custom home in Red Rock Country Club, BHHS
                 has the expertise to guide you through the process.
@@ -300,7 +300,7 @@ export default function SummerlinPage() {
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Summerlin isn't just a neighborhood—it's a lifestyle. I've been serving this area since
-                2008, and I can tell you exactly which villages suit young families, which offer the
+                2008, and I can tell you exactly which villages suit your lifestyle, which offer the
                 best investment potential, and where you'll find the hidden gems. That local knowledge is
                 what sets Berkshire Hathaway HomeServices apart."
               </blockquote>
