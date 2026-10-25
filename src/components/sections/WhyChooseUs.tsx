@@ -19,7 +19,7 @@ const features = [
   {
     icon: Award,
     title: "Proven Results",
-    description: "500+ successful transactions and satisfied clients.",
+    description: "500+ team sales and satisfied clients.",
   },
   {
     icon: Clock,

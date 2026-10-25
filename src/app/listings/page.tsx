@@ -286,7 +286,7 @@ export default function ListingsPage() {
                 </div>
                 <h3 className="font-bold mb-2">Expert Negotiation</h3>
                 <p className="text-slate-400 text-sm">
-                  $127M+ in closed transactions means proven negotiation skills on your behalf
+                  $127M+ in Dr. Duffy Group career sales means proven negotiation skills on your behalf
                 </p>
               </div>
               <div className="text-center">

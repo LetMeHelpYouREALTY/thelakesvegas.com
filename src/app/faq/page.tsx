@@ -144,7 +144,7 @@ const faqCategories = [
     faqs: [
       {
         q: "What is Dr. Jan Duffy's experience?",
-        a: "Dr. Jan has been serving Las Vegas since 2008, with $127M+ in closed transactions and 500+ satisfied clients. She specializes in residential, luxury, investment, and relocation services throughout Southern Nevada.",
+        a: "Dr. Jan has been serving Las Vegas since 2008, with $127M+ in Dr. Duffy Group career sales and 500+ team sales. She specializes in residential, luxury, investment, and relocation services throughout Southern Nevada.",
       },
       {
         q: "How do I contact Dr. Jan Duffy?",

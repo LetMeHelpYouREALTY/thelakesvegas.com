@@ -115,7 +115,7 @@ const sellingBenefits = [
     icon: DollarSign,
     title: "Skilled Negotiation",
     description:
-      "From offer review to closing negotiations, Dr. Jan protects your interests and maximizes your net proceeds. $127M+ in closed transactions means she knows how to handle any situation and close deals successfully.",
+      "From offer review to closing negotiations, Dr. Jan protects your interests and maximizes your net proceeds. $127M+ in Dr. Duffy Group career sales means she knows how to handle any situation and close deals successfully.",
   },
 ];
 
