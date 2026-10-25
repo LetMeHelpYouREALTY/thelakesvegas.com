@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = buildPageMetadata({
   path: "/neighborhoods/henderson",
   title: "Berkshire Hathaway HomeServices Henderson | Nevada Real Estate",
-  description: "Find Henderson homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's family-friendly communities. Median price $485K. Call (702) 500-1942.",
+  description: "Find Henderson homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's master-planned communities. Median price $485K. Call (702) 500-1942.",
   keywords: [
     "Berkshire Hathaway HomeServices Henderson",
     "Henderson homes for sale",
@@ -37,12 +37,12 @@ const hendersonNeighborhoodFaqs = [
   {
     question: "How safe is Henderson compared to Las Vegas?",
     answer:
-      "Henderson consistently ranks as one of America's safest cities. It has been named the safest city in Nevada and frequently appears in national 'Best Places to Live' rankings for its low crime rates and family-friendly environment.",
+      "Henderson consistently ranks as one of America's safest cities. It has been named the safest city in Nevada and frequently appears in national 'Best Places to Live' rankings for its parks and master-planned neighborhoods.",
   },
   {
     question: "What are the best neighborhoods in Henderson?",
     answer:
-      "Henderson's top neighborhoods include Green Valley (established, mature landscaping), Inspirada (resort-style amenities), MacDonald Highlands (luxury), Anthem (family-oriented), and Lake Las Vegas (waterfront living). Each offers distinct lifestyle options.",
+      "Henderson's top neighborhoods include Green Valley (established, mature landscaping), Inspirada (resort-style amenities), MacDonald Highlands (luxury), Anthem (amenity-focused), and Lake Las Vegas (waterfront living). Each offers distinct lifestyle options.",
   },
   {
     question: "Why choose Berkshire Hathaway HomeServices for Henderson real estate?",
@@ -61,7 +61,7 @@ const hendersonPageSchemas = combineSchemas(
     name: "Henderson",
     slug: "henderson",
     description:
-      "Nevada's second-largest city known for safety, schools, and family-friendly communities",
+      "Nevada's second-largest city known for parks, trails, and master-planned communities",
     latitude: 36.0395,
     longitude: -114.9817,
     containedIn: "Henderson",
@@ -314,7 +314,7 @@ export default function HendersonPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Henderson offers something for everyone—young professionals, growing families, active retirees.
+                "Henderson offers something for everyone—first-time buyers, move-up buyers, and downsizers.
                 As a Berkshire Hathaway HomeServices agent, I help clients cut through the options and find
                 the community that fits their lifestyle. There's a reason Henderson keeps winning 'Best Places
                 to Live' awards."

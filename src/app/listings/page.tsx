@@ -87,7 +87,7 @@ const neighborhoods = [
   },
   {
     name: "Henderson",
-    description: "Nevada's second-largest city with family-friendly communities and low crime",
+    description: "Nevada's second-largest city with master-planned communities, parks, and trails",
     medianPrice: "$485,000",
     daysOnMarket: 24,
   },
@@ -228,7 +228,7 @@ export default function ListingsPage() {
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Each Las Vegas neighborhood offers a unique lifestyle, from the resort-style living 
-              of Summerlin to the family-friendly communities of Henderson. Understanding these 
+              of Summerlin to the master-planned communities of Henderson. Understanding these 
               differences is crucial to finding a home that fits your needs. As a Berkshire 
               Hathaway HomeServices agent serving Las Vegas since 2008, Dr. Jan Duffy provides 
               expert guidance on which neighborhoods match your priorities—whether that's schools, 

@@ -213,7 +213,7 @@ export const neighborhoods = [
   {
     name: "Henderson",
     slug: "henderson",
-    description: "Nevada's second-largest city with family-friendly neighborhoods",
+    description: "Nevada's second-largest city with park-rich neighborhoods",
     medianPrice: "$485,000",
     highlights: ["Low crime rate", "Excellent schools", "Lake Las Vegas", "Green Valley"],
   },
@@ -243,7 +243,7 @@ export const neighborhoods = [
     slug: "north-las-vegas",
     description: "Rapidly growing area with affordable new construction",
     medianPrice: "$385,000",
-    highlights: ["New construction", "Affordable", "Growing area", "Family-friendly"],
+    highlights: ["New construction", "Affordable", "Growing area", "Community amenities"],
   },
   {
     name: "Skye Canyon",
@@ -257,7 +257,7 @@ export const neighborhoods = [
     slug: "centennial-hills",
     description: "Northwest Las Vegas community with mountain proximity",
     medianPrice: "$495,000",
-    highlights: ["Mountain access", "Parks", "Shopping", "Family-friendly"],
+    highlights: ["Mountain access", "Parks", "Shopping", "Community amenities"],
   },
   {
     name: "Inspirada",

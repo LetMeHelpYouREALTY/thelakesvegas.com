@@ -37,7 +37,7 @@ const inspiradaNeighborhoodFaqs = [
   {
     question: "How are the schools in Inspirada?",
     answer:
-      "Inspirada is served by highly-rated Henderson schools including newer facilities built specifically for the growing community. The area attracts families specifically for its educational options and family-friendly environment.",
+      "Inspirada is served by highly-rated Henderson schools including newer facilities built specifically for the growing community. The area draws buyers for its school options and parks.",
   },
   {
     question: "Is Inspirada a good investment?",
