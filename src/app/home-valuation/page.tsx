@@ -89,7 +89,7 @@ export default function HomeValuationPage() {
             <p className="text-xl text-slate-600">
               Get a free, no-obligation home valuation from Dr. Jan Duffy at{" "}
               <strong>Berkshire Hathaway HomeServices</strong>. Accurate pricing backed by 17+ years
-              of Las Vegas market expertise and $127M+ in closed transactions.
+              of Las Vegas market expertise and $127M+ in Dr. Duffy Group career sales.
             </p>
           </div>
 

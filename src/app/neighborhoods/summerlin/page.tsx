@@ -139,7 +139,7 @@ export default function SummerlinPage() {
               <p>
                 When homebuyers search for the best neighborhoods in Las Vegas, <strong>Summerlin</strong> consistently
                 ranks at the top. As a <strong>Berkshire Hathaway HomeServices</strong> agent specializing in Summerlin
-                real estate, Dr. Jan Duffy has helped hundreds of families find their perfect home in this
+                real estate, Dr. Jan Duffy has helped hundreds of clients find their perfect home in this
                 award-winning master-planned community.
               </p>
               <p>

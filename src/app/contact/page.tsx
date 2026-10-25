@@ -110,7 +110,7 @@ export default function ContactPage() {
                 Whether you're buying your first home, selling a luxury property, or exploring
                 investment opportunities, I'm here to provide expert guidance backed by the trusted{" "}
                 <strong>Berkshire Hathaway HomeServices</strong> brand. Serving Las Vegas since 2008 
-                with $127M+ in closed transactions.
+                with $127M+ in Dr. Duffy Group career sales.
               </p>
 
               {/* NAP Information */}
@@ -248,7 +248,7 @@ export default function ContactPage() {
                   <div className="flex items-start">
                     <Star className="h-5 w-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
                     <p className="text-slate-300 text-sm">
-                      <strong className="text-white">Proven Results:</strong> $127M+ in closed transactions serving Las Vegas since 2008.
+                      <strong className="text-white">Proven Results:</strong> $127M+ in Dr. Duffy Group career sales serving Las Vegas since 2008.
                     </p>
                   </div>
                   <div className="flex items-start">

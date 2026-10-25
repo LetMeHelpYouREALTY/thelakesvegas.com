@@ -25,7 +25,7 @@ import { combineSchemas, generateBreadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = buildPageMetadata({
   path: "/about",
   title: "About Dr. Jan Duffy | Berkshire Hathaway HomeServices Las Vegas",
-  description: "Meet Dr. Jan Duffy, your trusted Berkshire Hathaway HomeServices Nevada Properties agent. Serving Las Vegas since 2008, $127M+ in transactions, Henderson & Summerlin specialist. Call (702) 500-1942.",
+  description: "Meet Dr. Jan Duffy, your trusted Berkshire Hathaway HomeServices Nevada Properties agent. Serving Las Vegas since 2008, $127M+ in Dr. Duffy Group career sales, Henderson & Summerlin specialist. Call (702) 500-1942.",
   keywords: [
     "Dr. Jan Duffy",
     "Berkshire Hathaway HomeServices agent",
@@ -163,8 +163,8 @@ export default function AboutPage() {
                     world-class resources and local expertise to every client I serve.
                   </p>
                   <p>
-                    Since 2008, I've closed $127 million in transactions and
-                    helped hundreds of families find their perfect home in Las Vegas, Henderson,
+                    Since 2008, I've led the Dr. Duffy Group to $127M+ in career sales and
+                    helped hundreds of clients find their perfect home in Las Vegas, Henderson,
                     Summerlin, and throughout Southern Nevada. My expertise spans luxury properties,
                     new construction, investment real estate, 55+ active adult communities, and 
                     relocations—particularly for California families seeking Nevada's tax advantages.

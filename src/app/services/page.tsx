@@ -240,11 +240,11 @@ export default function ServicesPage() {
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                <span>$127M+ in Transactions</span>
+                <span>$127M+ in Team Career Sales</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                <span>500+ Satisfied Clients</span>
+                <span>500+ Team Sales</span>
               </div>
             </div>
           </div>

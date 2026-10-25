@@ -199,7 +199,7 @@ export default function BuyersPage() {
                   transaction—from the first showing to the closing table and beyond.
                 </p>
                 <div className="text-sm text-slate-500">
-                  Serving Las Vegas since 2008 | $127M+ in transactions
+                  Serving Las Vegas since 2008 | $127M+ in Dr. Duffy Group career sales
                 </div>
               </div>
             </div>
@@ -372,7 +372,7 @@ export default function BuyersPage() {
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">Local Expertise</h3>
                 <p className="text-slate-600 text-sm">
-                  Dr. Jan has served Las Vegas since 2008 with $127M+ in transactions
+                  Dr. Jan has served Las Vegas since 2008 with $127M+ in Dr. Duffy Group career sales
                 </p>
               </div>
               <div className="text-center">
@@ -381,7 +381,7 @@ export default function BuyersPage() {
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">Expert Negotiation</h3>
                 <p className="text-slate-600 text-sm">
-                  500+ successful transactions mean proven negotiation skills
+                  500+ team sales mean proven negotiation skills
                 </p>
               </div>
             </div>
