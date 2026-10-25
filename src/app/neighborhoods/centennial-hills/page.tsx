@@ -51,7 +51,7 @@ const centennialHillsPageSchemas = neighborhoodPageGraph({
   name: "Centennial Hills",
   breadcrumbLabel: "Centennial Hills",
   description:
-    "Established northwest Las Vegas community with mountain access, parks, and parks, pools, and community amenities.",
+    "Northwest Las Vegas community with mountain access, parks, pools, and community amenities.",
   faqs: centennialHillsNeighborhoodFaqs,
   latitude: 36.3047,
   longitude: -115.3019,

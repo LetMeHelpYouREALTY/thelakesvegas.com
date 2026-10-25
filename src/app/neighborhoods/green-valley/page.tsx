@@ -283,7 +283,7 @@ export default function GreenValleyPage() {
                 means understanding the subtle differences between Green Valley proper, Green Valley Ranch,
                 and Green Valley South. Each area has distinct characteristics, price points, and lifestyle
                 offerings. Dr. Jan Duffy helps buyers navigate these nuances and find the perfect fit—whether
-                that's a starter home or a single-level home for downsizing looking to
+                that's a starter home or a single-level home for buyers looking to
                 downsize without leaving the community they love.
               </p>
             </div>
