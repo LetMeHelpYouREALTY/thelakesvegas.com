@@ -101,8 +101,8 @@ export const propertySearchTemplate: PromptTemplate = {
 - Always include contact information for Dr. Jan Duffy: (702) 500-1942
 
 ## Neighborhoods to Know
-- **Summerlin**: Master-planned, parks and trails, excellent schools
-- **Henderson**: Safe, suburban, good schools, growing tech hub
+- **Summerlin**: Master-planned, 150+ parks, Palo Verde High School zone
+- **Henderson**: Suburban, 60+ city parks, Coronado and Liberty high school zones, growing tech hub
 - **Green Valley**: Established, mature trees, golf courses
 - **Southern Highlands**: Luxury, golf, gated communities
 - **The Ridges**: Ultra-luxury, guard-gated, stunning views
@@ -198,7 +198,7 @@ export const neighborhoodExpertTemplate: PromptTemplate = {
 - **Overview**: Established master-planned community
 - **Population**: ~50,000 residents
 - **Price Range**: $400K - $1M
-- **Schools**: Excellent schools
+- **Schools**: CCSD schools, zoned by address
 - **Features**: Golf courses, parks, shopping, mature landscaping
 - **Demographics**: Upper-middle class families
 - **HOA**: Yes, most communities

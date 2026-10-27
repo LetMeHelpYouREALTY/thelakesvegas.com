@@ -35,9 +35,9 @@ const hendersonNeighborhoodFaqs = [
       "As of January 2026, Henderson's median home price is $485,000, up 5.1% from last year. Prices range from $350,000 for condos to over $2 million in luxury communities like MacDonald Highlands.",
   },
   {
-    question: "How safe is Henderson compared to Las Vegas?",
+    question: "Where can I find crime data for Henderson?",
     answer:
-      "Henderson consistently ranks as one of America's safest cities. It has been named the safest city in Nevada and frequently appears in national 'Best Places to Live' rankings for its parks and master-planned neighborhoods.",
+      "The Henderson Police Department publishes crime statistics and an online crime map, and LVMPD does the same for Las Vegas. Review the data for any address you are considering.",
   },
   {
     question: "What are the best neighborhoods in Henderson?",
@@ -96,7 +96,7 @@ export default function HendersonPage() {
               Berkshire Hathaway HomeServices Henderson
             </h1>
             <p className="text-xl text-slate-600">
-              Nevada's safest city. Find your Henderson home with Dr. Jan Duffy, your trusted{" "}
+              Nevada's second-largest city. Find your Henderson home with Dr. Jan Duffy, your trusted{" "}
               <strong>Berkshire Hathaway HomeServices</strong> Henderson specialist.
             </p>
             <LocalServiceAreaBlurb topic="Henderson home search and listing strategy" />
@@ -141,10 +141,9 @@ export default function HendersonPage() {
                 and Dr. Jan Duffy brings unmatched expertise to every transaction.
               </p>
               <p>
-                What sets Henderson apart? Start with safety. Henderson consistently ranks as one of America's
-                safest large cities, making it the top choice for families with children. The city's excellent
-                schools, low crime rates, and community-oriented atmosphere create an environment where
-                families thrive. Add in the fact that Nevada has no state income tax, and you understand why
+                What sets Henderson apart? Start with the basics. The city runs more than 60 parks and multiple
+                recreation centers, its public schools are part of the Clark County School District, and Nevada
+                has no state income tax. That explains why
                 so many Californians are making Henderson their new home.
               </p>
               <p>
@@ -162,23 +161,21 @@ export default function HendersonPage() {
                 <div className="bg-slate-50 p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <Shield className="h-8 w-8 text-blue-600 mr-3" />
-                    <h4 className="font-bold text-slate-900 text-lg">America's Safest City</h4>
+                    <h4 className="font-bold text-slate-900 text-lg">Public Safety Data</h4>
                   </div>
                   <p className="text-slate-600">
-                    Henderson has been named the safest city in Nevada and consistently ranks among America's
-                    safest large cities. The Henderson Police Department's community policing approach and
-                    active neighborhood watch programs contribute to exceptionally low crime rates that give
-                    families peace of mind.
+                    The Henderson Police Department publishes crime statistics and a searchable crime map.
+                    Review the data for any street before you buy.
                   </p>
                 </div>
                 <div className="bg-slate-50 p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <Users className="h-8 w-8 text-blue-600 mr-3" />
-                    <h4 className="font-bold text-slate-900 text-lg">Family-First Community</h4>
+                    <h4 className="font-bold text-slate-900 text-lg">Parks and Community Events</h4>
                   </div>
                   <p className="text-slate-600">
-                    Henderson is designed for families. The city operates over 60 parks, multiple recreation
-                    centers, and hundreds of youth programs. The Henderson Libraries system is award-winning,
+                    The city operates over 60 parks, multiple recreation centers, and hundreds of
+                    recreation programs. The Henderson Libraries system is award-winning,
                     and community events throughout the year—from the Henderson Farmers Market to the annual
                     Heritage Parade—bring neighbors together.
                   </p>
@@ -189,8 +186,9 @@ export default function HendersonPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Henderson School Districts</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  Henderson offers some of Nevada's best public schools through Clark County School District,
-                  plus excellent charter and private options:
+                  Henderson public schools are part of the Clark County School District. Zoned high schools
+                  include Coronado, Foothill, Green Valley, and Liberty, depending on the address. Schools in
+                  the area include:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>
@@ -302,7 +300,7 @@ export default function HendersonPage() {
               <p>
                 Choosing <strong>Berkshire Hathaway HomeServices</strong> for your Henderson home search means
                 working with agents who understand the subtle differences between Henderson's many communities.
-                Dr. Jan Duffy can explain which neighborhoods have the best schools for your children's ages,
+                Dr. Jan Duffy can explain which schools are zoned for each address,
                 which HOAs are well-managed, and which areas offer the strongest investment potential. That
                 local knowledge, backed by the resources and reputation of Berkshire Hathaway, makes all the
                 difference.
@@ -328,7 +326,7 @@ export default function HendersonPage() {
           <FAQSection
             className="!py-12 bg-slate-50"
             title="Frequently Asked Questions About Henderson Real Estate"
-            subtitle="Safety, neighborhoods, and working with Dr. Jan Duffy"
+            subtitle="Crime data sources, neighborhoods, and working with Dr. Jan Duffy"
             faqs={hendersonNeighborhoodFaqs}
           />
 

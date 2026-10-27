@@ -35,9 +35,9 @@ const skyeCanyonNeighborhoodFaqs = [
       "Skye Canyon features Skye Center, a 15-acre amenity complex with resort-style pools, fitness center, sports courts, and event spaces. The community also offers miles of trails, parks, and is adjacent to Floyd Lamb Park.",
   },
   {
-    question: "Is Skye Canyon good for families?",
+    question: "What amenities and schools serve Skye Canyon?",
     answer:
-      "Yes, Skye Canyon is designed for families with new schools, extensive children's amenities, community events, and safe neighborhoods. The community hosts community events throughout the year at Skye Center.",
+      "Skye Canyon has parks, trails, and Skye Center, which hosts community events throughout the year. Nearby schools include Arbor View High School, Escobedo and Cadwallader middle schools, and the Somerset Academy Skye Canyon charter campus. Confirm zoning for any address with the CCSD Zoning Search.",
   },
   {
     question: "Why use Berkshire Hathaway HomeServices for Skye Canyon new construction?",

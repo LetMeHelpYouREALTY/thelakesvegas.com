@@ -30,9 +30,9 @@ const centennialHillsNeighborhoodFaqs = [
       "As of January 2026, Centennial Hills' median home price is $495,000, up 4.8% year-over-year. Prices range from $380,000 for smaller homes to over $900,000 for larger properties with mountain views.",
   },
   {
-    question: "Is Centennial Hills a good family neighborhood?",
+    question: "What amenities and schools serve Centennial Hills?",
     answer:
-      "Yes, Centennial Hills is one of Las Vegas's best family neighborhoods with highly-rated schools, safe streets, multiple parks including Centennial Hills Park, and convenient shopping at Centennial Center.",
+      "Centennial Hills has multiple parks, including Centennial Hills Park, and shopping at Centennial Center. Zoned high schools include Arbor View, Centennial, and Shadow Ridge, depending on the address. Confirm zoning for any address with the CCSD Zoning Search.",
   },
   {
     question: "How far is Centennial Hills from the Las Vegas Strip?",
@@ -179,7 +179,8 @@ export default function CentennialHillsPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Centennial Hills School Districts</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  Centennial Hills is served by established, well-regarded schools with proven track records:
+                  Centennial Hills is served by Clark County School District schools, including Arbor View,
+                  Centennial, and Shadow Ridge high schools, depending on the address:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>

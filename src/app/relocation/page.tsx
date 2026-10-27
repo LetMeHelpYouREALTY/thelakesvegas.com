@@ -61,13 +61,13 @@ const popularRelocationAreas = [
   {
     name: "Summerlin",
     best: "Families, professionals",
-    highlights: "Top-rated schools, 150+ parks, Red Rock Canyon proximity, master-planned living",
+    highlights: "Palo Verde High School, 150+ parks, Red Rock Canyon proximity, master-planned living",
     from: "$500K",
   },
   {
     name: "Henderson",
     best: "Families, retirees",
-    highlights: "Lowest crime rates, excellent schools, community feel, diverse neighborhoods",
+    highlights: "60+ city parks, Coronado and Liberty high school zones, Lake Las Vegas, master-planned communities",
     from: "$450K",
   },
   {
@@ -259,7 +259,7 @@ export default function RelocationPage() {
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <h3 className="font-bold text-lg text-slate-900 mb-4 flex items-center">
                   <School className="h-5 w-5 text-blue-600 mr-2" />
-                  Top-Rated School Areas
+                  School Zones by Area
                 </h3>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start">
@@ -394,7 +394,7 @@ export default function RelocationPage() {
                   a: "Absolutely. Dr. Jan provides virtual tours, video walkthroughs, and detailed neighborhood analysis so you can purchase confidently before relocating. Many clients buy their Las Vegas home without ever visiting in person until closing day.",
                 },
                 {
-                  q: "What are the best areas for families relocating to Las Vegas?",
+                  q: "Which areas do relocating buyers ask about most?",
                   a: "Summerlin, Henderson (especially Green Valley and Inspirada), and Skye Canyon consistently draw the most buyers for their parks, trails, and community amenities. Dr. Jan can match you with the right area based on your specific priorities—schools, commute, budget, and lifestyle.",
                 },
                 {
@@ -410,8 +410,8 @@ export default function RelocationPage() {
                   a: "Las Vegas has diversified beyond gaming and hospitality. Major growth sectors include healthcare (Intermountain Health, UMC), technology (Switch, various startups), sports (Raiders, Golden Knights, Aces), logistics (Amazon), and professional services. The economy is growing faster than the national average.",
                 },
                 {
-                  q: "Is Las Vegas safe for families?",
-                  a: "Yes, particularly in the suburban communities. Henderson consistently ranks as one of America's safest cities. Summerlin, Green Valley, and Inspirada also have very low crime rates. Dr. Jan can provide detailed crime statistics for any neighborhood you're considering.",
+                  q: "Where can I find crime data for Las Vegas neighborhoods?",
+                  a: "LVMPD publishes crime statistics and an online crime map for Las Vegas and unincorporated Clark County. The Henderson and North Las Vegas police departments do the same for their cities. Dr. Jan can send you those links for any neighborhood you are considering.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">

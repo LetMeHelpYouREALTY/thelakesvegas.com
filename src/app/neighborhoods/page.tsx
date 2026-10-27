@@ -33,8 +33,8 @@ const neighborhoods = [
     slug: "summerlin",
     medianPrice: "$625,000",
     priceChange: "+6.8%",
-    description: "Premier master-planned community with parks, trails, and top-rated schools",
-    highlights: ["150+ Parks", "Top Schools", "Red Rock Views", "Downtown Summerlin"],
+    description: "Premier master-planned community with 150+ parks and 150+ miles of trails",
+    highlights: ["150+ Parks", "CCSD Schools", "Red Rock Views", "Downtown Summerlin"],
     bestFor: "Families, professionals, outdoor enthusiasts",
   },
   {
@@ -43,7 +43,7 @@ const neighborhoods = [
     medianPrice: "$485,000",
     priceChange: "+5.1%",
     description: "Nevada's second-largest city known for parks, trails, and master-planned living",
-    highlights: ["Low Crime Rate", "Excellent Schools", "Lake Las Vegas", "Green Valley"],
+    highlights: ["60+ City Parks", "CCSD Schools", "Lake Las Vegas", "Green Valley"],
     bestFor: "Families, retirees, commuters",
   },
   {
@@ -88,7 +88,7 @@ const neighborhoods = [
     medianPrice: "$550,000",
     priceChange: "+5.5%",
     description: "Newer master-planned community in northwest Las Vegas with mountain views",
-    highlights: ["New Homes", "Mountain Views", "Skye Center", "Great Schools"],
+    highlights: ["New Homes", "Mountain Views", "Skye Center", "CCSD Schools"],
     bestFor: "Move-up buyers, outdoor enthusiasts, commuters",
   },
   {
@@ -106,7 +106,7 @@ const neighborhoods = [
     medianPrice: "$525,000",
     priceChange: "+5.0%",
     description: "Henderson master-planned community with resort-style living and modern homes",
-    highlights: ["Resort Pools", "Walking Trails", "New Construction", "Great Schools"],
+    highlights: ["Resort Pools", "Walking Trails", "New Construction", "CCSD Schools"],
     bestFor: "Families, active adults, new home buyers",
   },
   {
@@ -124,12 +124,12 @@ const neighborhoodsHubFaqs = [
   {
     question: "Which Las Vegas neighborhood is best for families?",
     answer:
-      "Summerlin, Henderson, Green Valley, Skye Canyon, and Inspirada are popular for schools, parks, and safety. Dr. Jan Duffy matches your commute, budget, and lifestyle to the right community across Clark County.",
+      "Summerlin, Henderson, Green Valley, Skye Canyon, and Inspirada are popular for parks, trails, and newer construction. Dr. Jan Duffy matches your commute, budget, and lifestyle to the right community across Clark County.",
   },
   {
     question: "How do I compare Summerlin vs Henderson?",
     answer:
-      "Summerlin offers master-planned villages and Red Rock proximity; Henderson emphasizes safety ratings and established communities like Green Valley. Median prices and HOA rules differ—Dr. Jan provides side-by-side market context.",
+      "Summerlin offers master-planned villages and Red Rock proximity; Henderson offers 60+ city parks and master-planned areas like Green Valley and Inspirada. Median prices and HOA rules differ—Dr. Jan provides side-by-side market context.",
   },
   {
     question: "Does Berkshire Hathaway HomeServices cover all of Clark County?",

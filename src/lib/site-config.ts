@@ -206,16 +206,16 @@ export const neighborhoods = [
   {
     name: "Summerlin",
     slug: "summerlin",
-    description: "Master-planned community with parks, trails, and top-rated schools",
+    description: "Master-planned community with 150+ parks and 150+ miles of trails",
     medianPrice: "$625,000",
-    highlights: ["Red Rock views", "150+ parks", "Top schools", "Golf courses"],
+    highlights: ["Red Rock views", "150+ parks", "CCSD schools", "Golf courses"],
   },
   {
     name: "Henderson",
     slug: "henderson",
     description: "Nevada's second-largest city with park-rich neighborhoods",
     medianPrice: "$485,000",
-    highlights: ["Low crime rate", "Excellent schools", "Lake Las Vegas", "Green Valley"],
+    highlights: ["60+ city parks", "CCSD schools", "Lake Las Vegas", "Green Valley"],
   },
   {
     name: "Green Valley",
@@ -250,7 +250,7 @@ export const neighborhoods = [
     slug: "skye-canyon",
     description: "Newer master-planned community in northwest Las Vegas",
     medianPrice: "$550,000",
-    highlights: ["New homes", "Mountain views", "Modern amenities", "Great schools"],
+    highlights: ["New homes", "Mountain views", "Modern amenities", "CCSD schools"],
   },
   {
     name: "Centennial Hills",
@@ -264,7 +264,7 @@ export const neighborhoods = [
     slug: "inspirada",
     description: "Henderson master-planned community with resort-style living",
     medianPrice: "$525,000",
-    highlights: ["Resort pools", "Walking trails", "New construction", "Great schools"],
+    highlights: ["Resort pools", "Walking trails", "New construction", "CCSD schools"],
   },
   {
     name: "Mountains Edge",
