@@ -128,7 +128,7 @@ export default function SunCityAnthemPage() {
               Sun City Anthem
             </h1>
             <p className="text-xl text-slate-600">
-              7,100+ homes. Mountain views. Henderson safety. Championship golf.
+              7,100+ homes. Mountain views. Henderson location. Championship golf.
             </p>
           </div>
 
@@ -164,10 +164,9 @@ export default function SunCityAnthemPage() {
                 About Sun City Anthem
               </h2>
               <p>
-                <strong>Sun City Anthem</strong> brings the legendary Sun City lifestyle to Henderson,
-                Nevada's safest and most desirable city. Built by Del Webb from 1998-2008, this
+                <strong>Sun City Anthem</strong> brings the legendary Sun City lifestyle to Henderson, Nevada's second-largest city. Built by Del Webb from 1998-2008, this
                 7,100+ home community offers stunning mountain views, championship golf, and
-                resort-caliber amenities—all within Henderson's renowned safety and quality of life.
+                resort-caliber amenities—all in the Anthem area of Henderson.
               </p>
               <p>
                 The community's centerpiece is the Anthem Center, a 64,000 sq ft clubhouse featuring
@@ -193,14 +192,13 @@ export default function SunCityAnthemPage() {
                     Why Henderson Matters
                   </h3>
                   <p className="text-slate-700 mb-4">
-                    Henderson consistently ranks as one of America's safest cities. For 55+ buyers,
-                    this translates to peace of mind, stable property values, and a community that
-                    attracts similar residents who value safety and quality of life.
+                    Henderson offers 55+ buyers more than 60 city parks, no state income tax, and
+                    quick access to Lake Las Vegas and Henderson Executive Airport.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="text-center bg-white rounded-lg p-4">
-                      <div className="text-2xl font-bold text-green-600">#2</div>
-                      <div className="text-sm text-slate-600">Safest Large City</div>
+                      <div className="text-2xl font-bold text-green-600">60+</div>
+                      <div className="text-sm text-slate-600">City Parks</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-4">
                       <div className="text-2xl font-bold text-green-600">A+</div>
@@ -301,8 +299,7 @@ export default function SunCityAnthemPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Sun City Anthem combines everything Henderson is known for—safety, quality, and
-                stunning scenery—with the Del Webb lifestyle. The views from the upper sections
+                "Sun City Anthem combines Henderson parks, golf, and stunning scenery with the Del Webb lifestyle. The views from the upper sections
                 are spectacular, and the Anthem Center rivals any resort clubhouse I've seen.
                 As a <strong>Berkshire Hathaway HomeServices</strong> agent, I help buyers find
                 the right balance of views, price, and proximity to amenities."

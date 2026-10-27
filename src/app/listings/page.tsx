@@ -81,7 +81,7 @@ const priceRanges = [
 const neighborhoods = [
   {
     name: "Summerlin",
-    description: "Master-planned community with Red Rock views, top schools, and 150+ parks",
+    description: "Master-planned community with Red Rock views, 150+ parks, and 150+ miles of trails",
     medianPrice: "$625,000",
     daysOnMarket: 22,
   },
@@ -167,7 +167,7 @@ export default function ListingsPage() {
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Las Vegas offers diverse neighborhoods for every lifestyle and budget. Whether you're 
-              seeking luxury estates in guard-gated communities, family homes near top-rated schools, 
+              seeking luxury estates in guard-gated communities, single-family homes with yards, 
               or affordable new construction, our comprehensive search tools help you find exactly 
               what you're looking for. Browse the most popular searches below or use the advanced 
               filters to customize your home search experience.

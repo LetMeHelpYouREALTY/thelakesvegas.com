@@ -290,7 +290,7 @@ export default function MarketInsightsPage() {
                   </span>
                 </div>
                 <p className="text-slate-600 text-sm mb-3">
-                  Tech corridor growth, safety rankings, and quality of life driving consistent demand.
+                  Tech corridor growth, 60+ city parks, and no state income tax driving consistent demand.
                   Expect continued 4-6% appreciation.
                 </p>
                 <div className="text-sm text-slate-500">
@@ -305,7 +305,7 @@ export default function MarketInsightsPage() {
                   </span>
                 </div>
                 <p className="text-slate-600 text-sm mb-3">
-                  Red Rock views, Downtown Summerlin, and top schools maintain premium positioning.
+                  Red Rock views, Downtown Summerlin, and 150+ parks maintain premium positioning.
                   Limited new inventory keeps values strong.
                 </p>
                 <div className="text-sm text-slate-500">
