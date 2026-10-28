@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const csp = [
   "default-src 'self'",
   [
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+    "script-src https://widgetbe.com https://*.widgetbe.com 'self' 'unsafe-inline' 'unsafe-eval'",
     "https://em.realscout.com",
     "https://www.realscout.com",
     "https://assets.calendly.com",
@@ -23,14 +23,14 @@ const csp = [
     "https://assets.calendly.com",
     "https://fonts.googleapis.com",
   ].join(" "),
-  "img-src 'self' data: blob: https: http:",
+  "img-src https://widgetbe.com https://*.widgetbe.com 'self' data: blob: https: http:",
   [
     "font-src 'self' data:",
     "https://assets.calendly.com",
     "https://fonts.gstatic.com",
   ].join(" "),
   [
-    "connect-src 'self'",
+    "connect-src https://widgetbe.com https://*.widgetbe.com 'self'",
     "https://em.realscout.com",
     "https://www.realscout.com",
     "https://api.anthropic.com",
@@ -44,7 +44,7 @@ const csp = [
     "https://graph.instagram.com",
   ].join(" "),
   [
-    "frame-src 'self'",
+    "frame-src https://widgetbe.com https://*.widgetbe.com 'self'",
     "https://em.realscout.com",
     "https://www.realscout.com",
     "https://calendly.com",
@@ -71,7 +71,7 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy:
-      "default-src 'self'; script-src 'none'; sandbox;",
+      "default-src 'self'; script-src https://widgetbe.com https://*.widgetbe.com 'none'; sandbox;",
   },
   async headers() {
     return [
