@@ -4,7 +4,7 @@ import React from "react";
 import type { Metadata } from "next";
 import Script from "next/script";
 import { GeistSans } from "geist/font/sans";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { cn } from "@/lib/utils";
 import AIChatWidget from "@/components/chat/AIChatWidget";
 import CalendlyBadge from "@/components/calendly/CalendlyBadge";

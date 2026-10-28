@@ -15,6 +15,8 @@ const csp = [
     "https://www.google-analytics.com",
     "https://challenges.cloudflare.com",
     "https://www.instagram.com",
+    "https://va.vercel-scripts.com",
+    "https://cdn.vercel-insights.com",
   ].join(" "),
   [
     "style-src 'self' 'unsafe-inline'",
@@ -42,6 +44,7 @@ const csp = [
     "https://api.followupboss.com",
     "https://www.instagram.com",
     "https://graph.instagram.com",
+    "https://vitals.vercel-insights.com",
   ].join(" "),
   [
     "frame-src 'self'",
