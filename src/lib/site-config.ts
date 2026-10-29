@@ -188,8 +188,13 @@ export const agentStats = {
   servingSince: 2008,
   transactionsClosed: 500,
   volumeClosed: "$127M+",
-  averageRating: 4.9,
-  reviewCount: 200,
+  // Verified on Realtor.com, Oct 29 2026. Shown on the page with a link to the
+  // source; not emitted as AggregateRating JSON-LD (Google treats a business's
+  // own rating markup as self-serving).
+  averageRating: 5.0,
+  reviewCount: 50,
+  reviewSourceName: "Realtor.com",
+  reviewSourceUrl: "https://www.realtor.com/realestateagents/63340593275bf055fedf5ff1",
 };
 
 // Value Propositions

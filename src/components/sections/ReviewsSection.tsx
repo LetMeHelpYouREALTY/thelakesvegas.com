@@ -3,16 +3,16 @@
 import { Star, Quote } from "lucide-react";
 import Image from "next/image";
 import { homepageTestimonials, type HomeReview } from "@/lib/home-reviews";
-import { localSeo } from "@/lib/site-config";
+import { agentStats, localSeo } from "@/lib/site-config";
 
 export type Review = HomeReview;
 
 export const defaultReviews = homepageTestimonials;
 
-// Aggregate rating stats
+/** Mirrors `agentStats` (Realtor.com profile) — single source for the stars and count shown in the UI */
 export const aggregateRating = {
-  ratingValue: 4.9,
-  reviewCount: 500,
+  ratingValue: agentStats.averageRating,
+  reviewCount: agentStats.reviewCount,
   bestRating: 5,
   worstRating: 1,
 };
@@ -31,9 +31,11 @@ interface ReviewsSectionProps {
 }
 
 export default function ReviewsSection({
-  reviews = defaultReviews,
+  // Named testimonials are held until each one is confirmed as a real client (Oct 29, 2026).
+  // Pass `reviews` explicitly to show verified quotes.
+  reviews = [],
   title = "What Our Clients Say",
-  subtitle = "Real testimonials from satisfied clients across Las Vegas and Henderson",
+  subtitle = "Read verified client reviews on Realtor.com and Google",
   googleReviewsUrl = localSeo.googleReviewsUrl,
   className = "",
 }: ReviewsSectionProps) {
@@ -60,14 +62,20 @@ export default function ReviewsSection({
               ))}
             </div>
             <span className="text-lg font-semibold text-slate-900">
-              {aggregateRating.ratingValue}
+              {aggregateRating.ratingValue.toFixed(1)}
             </span>
-            <span className="text-slate-600">
-              ({aggregateRating.reviewCount}+ reviews)
-            </span>
+            <a
+              href={agentStats.reviewSourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-600 underline-offset-2 hover:underline"
+            >
+              ({aggregateRating.reviewCount} reviews on {agentStats.reviewSourceName})
+            </a>
           </div>
         </div>
 
+        {reviews.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {reviews.map((review) => (
             <div
@@ -113,6 +121,7 @@ export default function ReviewsSection({
             </div>
           ))}
         </div>
+        )}
 
         {/* Google Reviews CTA */}
         <div className="text-center mt-12">

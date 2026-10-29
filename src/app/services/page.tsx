@@ -432,8 +432,8 @@ export default function ServicesPage() {
                 <div className="text-slate-300 text-sm">Volume Closed</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-blue-400 mb-2">4.9★</div>
-                <div className="text-slate-300 text-sm">Client Rating</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">5.0★</div>
+                <div className="text-slate-300 text-sm">Realtor.com Rating</div>
               </div>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
