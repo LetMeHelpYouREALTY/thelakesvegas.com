@@ -71,7 +71,7 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy:
-      "default-src 'self'; script-src https://widgetbe.com https://*.widgetbe.com 'none'; sandbox;",
+      "default-src 'self'; script-src 'none'; sandbox;",
   },
   async headers() {
     return [
