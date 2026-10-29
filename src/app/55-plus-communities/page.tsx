@@ -175,7 +175,7 @@ const communities = [
       "Henderson's premier 55+ community",
       "2 championship golf courses",
       "Stunning mountain views",
-      "America's safest large city location",
+      "Henderson location with public crime data online",
     ],
     description:
       "Henderson's premier 55+ community with stunning mountain views and championship golf.",
@@ -288,7 +288,7 @@ const communities = [
     highlights: [
       "Most affordable Summerlin 55+ option",
       "18-hole golf course",
-      "Established community (1990s)",
+      "Community (1990s)",
       "Strong sense of community",
     ],
     description:

@@ -366,7 +366,7 @@ export default function InvestmentPropertiesPage() {
               <div className="bg-white rounded-xl p-6">
                 <h3 className="font-bold text-xl text-slate-900 mb-2">Henderson</h3>
                 <p className="text-slate-600 mb-4">
-                  <strong>Best for: Balanced investors.</strong> Premium tenant quality, excellent schools,
+                  <strong>Best for: Balanced investors.</strong> Premium tenant quality, nearby public schools,
                   and steady appreciation. Lower vacancy rates and longer tenant retention offset
                   slightly lower cap rates.
                 </p>
