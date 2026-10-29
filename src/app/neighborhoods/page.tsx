@@ -33,8 +33,8 @@ const neighborhoods = [
     slug: "summerlin",
     medianPrice: "$625,000",
     priceChange: "+6.8%",
-    description: "Premier master-planned community with parks, trails, and top-rated schools",
-    highlights: ["150+ Parks", "Top Schools", "Red Rock Views", "Downtown Summerlin"],
+    description: "Premier master-planned community with parks, trails, and nearby public schools",
+    highlights: ["150+ Parks", "Nearby Public Schools", "Red Rock Views", "Downtown Summerlin"],
     bestFor: "Families, professionals, outdoor enthusiasts",
   },
   {
@@ -42,8 +42,8 @@ const neighborhoods = [
     slug: "henderson",
     medianPrice: "$485,000",
     priceChange: "+5.1%",
-    description: "Nevada's second-largest city known for safety, schools, and family-friendly living",
-    highlights: ["Low Crime Rate", "Excellent Schools", "Lake Las Vegas", "Green Valley"],
+    description: "Nevada's second-largest city known for parks, schools, and master-planned living",
+    highlights: ["Public Crime Maps", "Nearby Public Schools", "Lake Las Vegas", "Green Valley"],
     bestFor: "Families, retirees, commuters",
   },
   {
@@ -78,9 +78,9 @@ const neighborhoods = [
     slug: "north-las-vegas",
     medianPrice: "$385,000",
     priceChange: "+3.2%",
-    description: "Rapidly growing area with affordable new construction and family-friendly communities",
-    highlights: ["New Construction", "Affordable", "Growing Area", "Family-Friendly"],
-    bestFor: "First-time buyers, young families, investors",
+    description: "Rapidly growing area with affordable new construction communities",
+    highlights: ["New Construction", "Affordable", "Growing Area"],
+    bestFor: "First-time buyers, move-up buyers, investors",
   },
   {
     name: "Skye Canyon",
@@ -88,8 +88,8 @@ const neighborhoods = [
     medianPrice: "$550,000",
     priceChange: "+5.5%",
     description: "Newer master-planned community in northwest Las Vegas with mountain views",
-    highlights: ["New Homes", "Mountain Views", "Skye Center", "Great Schools"],
-    bestFor: "Young families, outdoor enthusiasts, commuters",
+    highlights: ["New Homes", "Mountain Views", "Skye Center", "Nearby public schools"],
+    bestFor: "Move-up buyers, outdoor enthusiasts, commuters",
   },
   {
     name: "Centennial Hills",
@@ -97,7 +97,7 @@ const neighborhoods = [
     medianPrice: "$495,000",
     priceChange: "+4.8%",
     description: "Northwest Las Vegas community with mountain proximity and family amenities",
-    highlights: ["Mountain Access", "Parks", "Shopping", "Family-Friendly"],
+    highlights: ["Mountain Access", "Parks", "Shopping"],
     bestFor: "Families, outdoor lovers, professionals",
   },
   {
@@ -106,7 +106,7 @@ const neighborhoods = [
     medianPrice: "$525,000",
     priceChange: "+5.0%",
     description: "Henderson master-planned community with resort-style living and modern homes",
-    highlights: ["Resort Pools", "Walking Trails", "New Construction", "Great Schools"],
+    highlights: ["Resort Pools", "Walking Trails", "New Construction", "Nearby public schools"],
     bestFor: "Families, active adults, new home buyers",
   },
   {
@@ -129,7 +129,7 @@ const neighborhoodsHubFaqs = [
   {
     question: "How do I compare Summerlin vs Henderson?",
     answer:
-      "Summerlin offers master-planned villages and Red Rock proximity; Henderson emphasizes safety ratings and established communities like Green Valley. Median prices and HOA rules differ—Dr. Jan provides side-by-side market context.",
+      "Summerlin offers master-planned villages and Red Rock proximity; Henderson offers master-planned communities like Green Valley and publishes its crime data online. Median prices and HOA rules differ—Dr. Jan provides side-by-side market context.",
   },
   {
     question: "Does Berkshire Hathaway HomeServices cover all of Clark County?",
@@ -227,7 +227,7 @@ export default function NeighborhoodsPage() {
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Every Las Vegas neighborhood has its own personality. Whether you want the
-                family-friendly parks of Summerlin, the established charm of Green Valley, or the
+                parks of Summerlin, the established charm of Green Valley, or the
                 luxury of The Ridges, I'll help you find the community that matches your lifestyle.
                 That's the Berkshire Hathaway HomeServices difference—personalized guidance backed
                 by local expertise."

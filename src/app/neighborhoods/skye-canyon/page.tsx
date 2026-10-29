@@ -37,7 +37,7 @@ const skyeCanyonNeighborhoodFaqs = [
   {
     question: "Is Skye Canyon good for families?",
     answer:
-      "Yes, Skye Canyon is designed for families with new schools, extensive children's amenities, community events, and safe neighborhoods. The community hosts family-friendly events throughout the year at Skye Center.",
+      "Skye Canyon has parks with splash pads and play areas, community events, and the Skye Center community facility.",
   },
   {
     question: "Why use Berkshire Hathaway HomeServices for Skye Canyon new construction?",
@@ -305,7 +305,7 @@ export default function SkyeCanyonPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Skye Canyon is where young families want to be right now. The amenities are incredible,
+                "Skye Canyon is where buyers want to be right now. The amenities are incredible,
                 the homes are modern and energy-efficient, and the community vibe is exactly what people
                 are looking for. As a Berkshire Hathaway HomeServices agent, I make sure my clients get
                 the best value—whether that's negotiating builder upgrades or finding a resale with

@@ -32,7 +32,7 @@ const theRidgesNeighborhoodFaqs = [
   {
     question: "How exclusive is The Ridges community?",
     answer:
-      "The Ridges is one of Las Vegas's most exclusive communities with 24/7 guard-gated security, only 900 home sites across six distinct villages, and strict architectural guidelines ensuring estate-quality construction throughout.",
+      "The Ridges is one of Las Vegas's luxury communities with 24/7 guard-gated security, only 900 home sites across six distinct villages, and strict architectural guidelines ensuring estate-quality construction throughout.",
   },
   {
     question: "What celebrities and executives live in The Ridges?",
@@ -255,7 +255,7 @@ export default function TheRidgesPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Schools Serving The Ridges</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  The Ridges is served by top-rated public schools in the Palo Verde cluster, plus Las Vegas's
+                  The Ridges is served by public schools in the Palo Verde cluster, plus Las Vegas's
                   finest private school options:
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
