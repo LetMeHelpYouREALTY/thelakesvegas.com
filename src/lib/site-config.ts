@@ -52,7 +52,7 @@ export function isOwnedSiteHostname(hostname: string): boolean {
 
 export const localSeo = {
   /** Update when The Lakes GBP review short link is available */
-  googleReviewsUrl: "https://g.page/r/heyberkshire/review",
+  googleReviewsUrl: "https://search.google.com/local/writereview?placeid=ChIJ7XLw8ta5yIARjTZPjgHJWVQ",
 };
 
 /** Facebook Page: General settings name + username (thelakesvegas.com brand) */
