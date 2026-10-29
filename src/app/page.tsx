@@ -1,5 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
+import FeaturedListing from "@/components/sections/FeaturedListing";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import ReviewsSection from "@/components/sections/ReviewsSection";
@@ -159,6 +160,12 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+
+        <FeaturedListing
+          phone={"(702) 500-1955"}
+          phoneHref={"tel:+17025001955"}
+          siteHost="thelakesvegas.com"
+        />
 
         <section
           aria-label="Explore key areas of this site"
