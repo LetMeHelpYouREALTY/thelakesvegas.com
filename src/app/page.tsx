@@ -11,11 +11,9 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { Home as HomeIcon, TrendingUp, Shield, Users, Phone } from "lucide-react";
 import SchemaScript from "@/components/SchemaScript";
-import { homepageTestimonials } from "@/lib/home-reviews";
 import {
   combineSchemas,
   generateFAQSchema,
-  generateHomepageReviewSchemas,
 } from "@/lib/schema";
 import { theLakesGeo, theLakesHomeFaqItems } from "@/lib/the-lakes-aeo";
 import {
@@ -143,18 +141,9 @@ export const metadata: Metadata = buildPageMetadata({
 const faqSchema = generateFAQSchema(theLakesHomeFaqItems);
 const openHouseEventJsonLd = buildOpenHouseEventJsonLd();
 
-const homePageReviewSchemas = generateHomepageReviewSchemas(
-  homepageTestimonials.map((r) => ({
-    author: r.name,
-    rating: r.rating,
-    reviewBody: r.text,
-    datePublished: r.date,
-  })),
-);
-
 const homePageSchema = openHouseEventJsonLd
-  ? combineSchemas(faqSchema, openHouseEventJsonLd, ...homePageReviewSchemas)
-  : combineSchemas(faqSchema, ...homePageReviewSchemas);
+  ? combineSchemas(faqSchema, openHouseEventJsonLd)
+  : combineSchemas(faqSchema);
 
 export default function Home() {
   const mapEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
