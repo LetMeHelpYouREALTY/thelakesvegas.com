@@ -15,6 +15,7 @@ import {
   combineSchemas,
 } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
+import { SpeedInsights as VercelSpeedInsights } from "@vercel/speed-insights/next";
 
 const title = `${siteConfig.name} | Dr. Jan Duffy, REALTOR® | BHHS Nevada Properties`;
 const description = siteConfig.description;
@@ -138,6 +139,7 @@ export default function RootLayout({
           window.widgetTracker("create", "WT-XQHVYQWW");
           window.widgetTracker("send", "pageview");
         `}</Script>
+        <VercelSpeedInsights />
       </body>
     </html>
   );
